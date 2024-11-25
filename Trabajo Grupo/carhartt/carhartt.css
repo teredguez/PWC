@@ -1,0 +1,49 @@
+body {
+    font-family: Arial;
+    background-color: #f9f9f9;/*poner de fondo el mismo color que las imágenes de los productos*/
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 15px; /* Espacio entre los elementos */
+    margin: 40px auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.product-item {
+    background-color: #fff; /*la caja de cada producto con fondo blanco*/
+    border-radius: 10px; /*hacer borde redondeado*/
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-item:hover {
+    /*subir un poco hacia arriba cada imagen cuando se señala*/
+    transform: translateY(-5px); 
+}
+
+/*ajustar las imagenes para que sean todas iguales de tamaño*/
+.product-item img {
+    max-width: 100%;
+}
+
+/*nombre de los productos*/
+.product-item h3 {
+    font-size: 15px;
+    color: black;
+}
+
+/*precio de los productos*/
+.product-item p {
+    font-size: 13px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.product-item a {
+    /*para no subrayar el nombre y el precio de cada producto*/
+    text-decoration: none;
+}
+
