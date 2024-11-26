@@ -172,19 +172,21 @@ button:hover{
 .carousel-track-container {
     overflow: hidden;
     width: 100%;
+    padding: 20px;
 }
 
 /* Track que contiene las imágenes */
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    gap: 30px;
 }
 
 /* Imágenes */
 .carousel-track img {
     width: 150px;
     height: auto; /* Ajusta automáticamente la altura */
-    margin: 0 10px;
+    margin: 0 70px;
     flex-shrink: 0;
 }
 
