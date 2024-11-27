@@ -1,6 +1,54 @@
 body {
     font-family: Arial;
-    background-color: #f9f9f9;/*poner de fondo el mismo color que las imágenes de los productos*/
+    background-color: #f9f9f9;/* poner de fondo el mismo color que las imágenes de los productos */
+}
+
+.header{
+    background-color: coral;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:85px;
+    padding: 5px;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: black;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header .nav-links li a:hover{
+    color:white;
 }
 
 .product-grid {
@@ -46,7 +94,6 @@ body {
     /*para no subrayar el nombre y el precio de cada producto*/
     text-decoration: none;
 }
-
 
 /*Footer*/
 
