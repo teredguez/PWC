@@ -47,4 +47,18 @@ function moveCarousel(direction) {
 }
 
 
+//funcion para deslizar la pantalla hacia los productos destacados
+//al pulsar el boton de Shop Now
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleccionamos el botón y la sección de destino
+    const shopNowButton = document.getElementById("shop now button");
+    const popularSection = document.getElementById("popular");
 
+    // Agregamos el evento al botón
+    shopNowButton.addEventListener("click", () => {
+        popularSection.scrollIntoView({
+            behavior: "smooth", // Deslizamiento suave
+            block: "start"     // Alinea la parte superior de la sección con la parte superior de la ventana
+        });
+    });
+});
