@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayton Jacket Carhartt</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../productos.css">
+</head>
+
+<body>
+    <!--BARRA DE NAVEGACIÓN-->
+    <header class="header">
+        <div class="logo">
+            <a href="../Menu.html">
+                <img src="images/LOGO-NO-FONDO.png" alt="Logo de la marca" height="40">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">HOMBRE</a></li>
+                <li><a href="#">MUJER</a></li>
+                <li><a href="#">ZAPATOS</a></li>
+                <li><a href="#" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container sproduct my-5 pt-5">
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12">
+                <img class="img-fluid w-100" src="images/RivetJacket.png" alt="">
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <h6>Home / Carhartt</h6>
+                <h3 class="py-4">OG Active Rivet Jacket</h3>
+                <h2>249.00€</h2>
+                <select id="size-select" class="my-3">
+                    <option value="" selected>Select Size</option>
+                    <option>XS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <input id="quantity-input" type="number" value="1" min="1">
+                <button id="add-to-cart-btn">Añadir al carrito</button>
+                <h4 class="mt-5 mb-5">Detalles del Producto</h4>
+                <span>La chaqueta OG Active Rivet está confeccionada con algodón de textura gruesa con un forro acolchado con costuras en forma de diamante. La prenda presenta nuestro corte holgado original, que es ligeramente más cuadrado y más grande.
+                    También tiene acabados de malla que le dan un efecto más ajustado. El bolsillo canguro, las costuras reforzadas y los remaches metálicos añaden toques utilitarios. Una etiqueta cuadrada de piel sintética completa el diseño.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="relacionados" class="my-5 pb-5">
+        <div class="container text-center mt-5 py-5">
+            <h3>PRODUCTOS RELACIONADOS</h3>
+            <hr class="mx-auto">
+        </div>
+        <div class="row mx-auto container-fluid">
+            <div class="similarProduct text-center col-lg-3 col-md-4 col-12">
+                <img class="img-fluid mb-3" src="Similares/Images/CH-NORTH-1.jpg" alt="">
+                <h5 class="product-name">Chaqueta The North Face M 1996 Retro Nuptse</h5>
+                <h4 class="product-name">230.00€</h4>
+                <a href="Similares/SIMILARES-NORTHFACE.html" class="btn btn-primary">Buy Now</a>
+            </div>
+            <div class="similarProduct text-center col-lg-3 col-md-4 col-12">
+                <img class="img-fluid mb-3" src="Similares/Images/GORRO-STO-1.jpg" alt="">
+                <h5 class="product-name">Gorro Stone Island Speckled Wool Nylon Silk</h5>
+                <h4 class="product-name">160.00€</h4>
+                <a href="Similares/SIMILARES-STONE.html" class="btn btn-primary">Buy Now</a>
+            </div>
+            <div class="similarProduct text-center col-lg-3 col-md-4 col-12">
+                <img class="img-fluid mb-3" src="Similares/Images/SUDADERA-STU-1.jpg" alt="">
+                <h5 class="product-name">Sudadera Stussy Con Capucha Classic Logo Relaxed Fit</h5>
+                <h4 class="product-name">180.00€</h4>
+                <a href="Similares/SIMILARES-STUSSY.html" class="btn btn-primary">Buy Now</a>
+            </div>
+            <div class="similarProduct text-center col-lg-3 col-md-4 col-12">
+                <img class="img-fluid mb-3" src="Similares/Images/BOTA-TIM-1.jpg" alt="">
+                <h5 class="product-name">Botas Timberland Impermeables Goretex Clásicas 6-inch</h5>
+                <h4 class="product-name">225.00€</h4>
+                <a href="Similares/SIMILARES-TIMBERLAND.html" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <img src="images/LOGO-NO-FONDO.png" alt="">
+                <p>En Urban Thread, reinventamos la moda urbana para quienes buscan estilo, autenticidad y una conexión con la cultura de la ciudad. Nuestra tienda está diseñada para ofrecerte lo mejor en ropa, calzado y accesorios.</p>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h5 class="pb-2">Productos</h5>
+                <ul class="text-uppercase list-unstyled">
+                    <li><a href="#">Hombre</a></li>
+                    <li><a href="#">Mujer</a></li>
+                    <li><a href="#">Más destacado</a></li>
+                    <li><a href="#">Zapatos</a></li>
+                    <li><a href="#">Complementos</a></li>
+                </ul>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h5 class="pb-2">Contáctanos</h5>
+                <div>
+                    <h6 class="text-uppercase">Dirección</h6>
+                    <p>Calle Uría, 33, 33003 Oviedo, Asturias, España</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Teléfono</h6>
+                    <p>+34 649 079 009</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Correo Electrónico</h6>
+                    <p>urban.thread@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h5 class="pb-2">Instagram</h5>
+                <div class="row">
+                    <img class="img-fluid m-2" src="Images/INSTA-1.jpg" alt="">
+                    <img class="img-fluid m-2" src="Images/INSTA-2.jpg" alt="">
+                    <img class="img-fluid m-2" src="Images/INSTA-3.jpg" alt="">
+                    <img class="img-fluid m-2" src="Images/INSTA-4.jpg" alt="">
+                </div>
+            </div>
+            <div class="copyright mt-5">
+                <div class="row container mx-auto">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <img src="Images/pago.png" alt="">
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <p></p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <p>© 2024 - Urban Thread</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- Carrito -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
