@@ -1,0 +1,154 @@
+body {
+    font-family: Arial;
+    background-color: #f9f9f9;/* poner de fondo el mismo color que las imágenes de los productos */
+}
+
+.header{
+    background-color: coral;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:85px;
+    padding: 5px;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: black;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header .nav-links li a:hover{
+    color:white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 15px; /* Espacio entre los elementos */
+    margin: 40px auto;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.product-item {
+    background-color: #fff; /*la caja de cada producto con fondo blanco*/
+    border-radius: 10px; /*hacer borde redondeado*/
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-item:hover {
+    /*subir un poco hacia arriba cada imagen cuando se señala*/
+    transform: translateY(-5px); 
+}
+
+/* Ajustar las imágenes de los productos a forma rectangular */
+.product-item img {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 250px; /* Altura más pequeña para dar un aspecto rectangular */
+    object-fit: cover; /* Recorta la imagen proporcionalmente para llenar el espacio */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+    display: block; /* Evita espacios extra alrededor de la imagen */
+}
+
+
+/*nombre de los productos*/
+.product-item h3 {
+    font-size: 15px;
+    color: black;
+}
+
+/*precio de los productos*/
+.product-item p {
+    font-size: 13px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.product-item a {
+    /*para no subrayar el nombre y el precio de cada producto*/
+    text-decoration: none;
+}
+
+footer {
+    background-color:#6b6666;
+    text-align: center;
+    padding: 10px;
+}
+
+/* imágenes del footer*/
+footer img {
+    width: 30px; /*30x30 de tamaño */
+    height: 30px;      
+    border-radius: 30%; /*cdarle forma a las imágenes */
+    margin-right: 20px;  /* espacio entre las dos imagenes */
+}
+
+footer{
+    background-color: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+footer a {
+    color: inherit; /* Mantén el color de los enlaces consistente */
+    text-decoration: none; /* Elimina subrayados, si los hay */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Opcional: subrayar enlaces al pasar el ratón */
+}
+
+.footer-one img {
+    max-width: 100%; /* Limita el ancho al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    margin-bottom: 20px; /* Añade espacio entre el logo y el texto */
+}
+
+.footer-one {
+    overflow: hidden; /* Controla el desbordamiento */
+    padding-right: 15px; /* Asegura espaciado dentro de la columna */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-one h5{
+    font-size: xx-large;
+}
+
+.footer-one .row img {
+    width: 100px; /* Ajusta al tamaño deseado */
+    height: 100px; /* Igual al ancho para crear un cuadrado */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
