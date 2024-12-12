@@ -272,37 +272,34 @@ button:hover{
     background-color: coral; /* Cambia de color al pasar el mouse */
 }
 
-.product{
-    cursor: pointer;
-    margin-bottom: 2rem;
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Asegura una altura uniforme */
 }
-
-.product img{
-    transition: 0.3s all;
+  
+  .product-details {
+    flex-grow: 1; /* Permite que el contenido principal se expanda */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos uniformemente */
 }
-
-.product:hover img{
-    opacity: 0.7;
+  
+  .product-name {
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
-
-.product.btn{
-    background-color: black;
-    transform: translateY(20);
-    opacity: 0;
-    transition: 0.3s all;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  .product-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
-
-.product:hover .buy-button{
-    transform: translateY(0);
-    opacity: 1;
-    cursor: pointer;
+  
+  .btn {
+    align-self: center; 
 }
-
-.product.btn:hover{
-    color: rgba(0, 0, 0, 0.225);
-}
-
+ 
 hr{
     width: 30px;
     height: 2px;
