@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+body{
+    background-color:  coral;
+}
+
+/*header*/
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:85px;
+    padding: 5px 10%;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: black;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header .nav-links li a:hover{
+    color:coral;
+}
+
+/* Título principal */
+h1{
+    padding : 10px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+/* Contenedor del mapa */
+.map-container {
+    display: flex; /* Habilita el uso de flexbox */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    max-width: 50%; /* Limita el ancho del contenedor */
+    padding: 10px;
+}
+
+/* Estilo de la imagen del mapa */
+.map-image {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Contenedor general del apartado */
+.store-locator {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+}
+
+/* Párrafo descriptivo */
+.store-locator p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal: Mapa y tiendas */
+.store-row {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre tarjetas */
+    margin-bottom: 20px; /* Espacio entre filas */
+}
+
+.store-card {
+    background-size: cover; /* Asegura que el fondo cubra todo el contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px; /* Fija la altura */
+    width: 30%; /* Cada tarjeta ocupa un 30% del ancho */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Botón */
+.btn-primary {
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: coral;
+}
+

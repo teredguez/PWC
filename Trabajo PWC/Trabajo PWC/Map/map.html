@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo de Vigo</title>
+    <link rel="stylesheet" href="mapStyle.css">
+</head>
+
+<body>
+
+     <!--BARRA DE NAVEGACIÓN-->
+     <header class="header">
+        <div class="logo">
+            <a href="../Menu.html">
+                <img src="Images/LOGO-NO-FONDO.png" alt="Logo de la marca" height="40">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">HOMBRE</a></li>
+                <li><a href="#">MUJER</a></li>
+                <li><a href="../Zapatos/Zapatos.html">ZAPATOS</a></li>
+                <li><a href="#" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="store-locator">
+        <h1>Descubre nuestras tiendas en Europa</h1>
+        <p>Encuentra nuestras tiendas físicas en las principales ciudades de Europa. Descubre colecciones exclusivas y recibe atención personalizada cerca de ti.</p>
+    
+        <!-- Contenedor principal -->
+        <div class="store-content">
+            <!-- Mapa -->
+            <div class="map-container">
+                <img src="Images/mapa.png" alt="Mapa de Europa" usemap="#europe-map" class="map-image">
+            </div>
+    
+            <!-- Tiendas destacadas -->
+            <div class="store-row">
+                <div class="store-card">
+                    <p>Champs-Élysées, París</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+                <div class="store-card">
+                    <p>Gran Vía, Madrid</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+                <div class="store-card">
+                    <p>Alexanderplatz, Berlín</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="store-row">
+                <div class="store-card">
+                    <p>Oxford Street, Londres</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+                <div class="store-card">
+                    <p>Dam Square, Ámsterdam</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+                <div class="store-card">
+                    <p>Piazza Navona, Roma</p>
+                    <a href="#" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+    
+    
+    
+</body>
+</html>
