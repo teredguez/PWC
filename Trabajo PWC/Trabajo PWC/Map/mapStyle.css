@@ -2,15 +2,13 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
 }
 
 body{
-    background-color:  coral;
+    background-color: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/*header*/
 .header{
     background-color: white;
     display: flex;
@@ -18,6 +16,7 @@ body{
     align-items: center;
     height:85px;
     padding: 5px 10%;
+    margin-bottom: 0; /* Asegura que no haya margen extra debajo del header */
 }
 
 .header .logo{
@@ -58,86 +57,164 @@ body{
 .header .nav-links li a:hover{
     color:coral;
 }
+/* Carrito de Compras */
+.cart {
+    position: relative;
+    margin-left: 20px;
+}
 
-/* Título principal */
-h1{
-    padding : 10px;
+.cart-icon img {
+    height: 35px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cart-icon img:hover {
+    transform: scale(1.2);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: coral;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+hr{
+    width: 30px;
+    height: 2px;
     color: black;
+}
+
+footer{
+    background-color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
 }
 
-/* Contenedor del mapa */
-.map-container {
-    display: flex; /* Habilita el uso de flexbox */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    max-width: 50%; /* Limita el ancho del contenedor */
-    padding: 10px;
+
+footer a {
+    color: inherit; /* Mantén el color de los enlaces consistente */
+    text-decoration: none; /* Elimina subrayados, si los hay */
 }
 
-/* Estilo de la imagen del mapa */
-.map-image {
-    width: 100%;
-    transition: transform 0.3s ease;
+footer a:hover {
+    text-decoration: underline; /* Opcional: subrayar enlaces al pasar el ratón */
 }
 
-/* Contenedor general del apartado */
+.footer-one img {
+    max-width: 100%; /* Limita el ancho al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    margin-bottom: 20px; /* Añade espacio entre el logo y el texto */
+}
+
+.footer-one {
+    overflow: hidden; /* Controla el desbordamiento */
+    padding-right: 15px; /* Asegura espaciado dentro de la columna */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-one h5{
+    font-size: xx-large;
+}
+
+.footer-one .row img {
+    width: 100px; /* Ajusta al tamaño deseado */
+    height: 100px; /* Igual al ancho para crear un cuadrado */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
+.copyright .col-lg-3 img {
+    max-width: 100%; /* La imagen no excederá el ancho de su columna */
+    height: auto; /* Mantiene las proporciones */
+    display: block; /* Asegura que no se desborde */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+/* Estilo del Mapa y Sección Tiendas */
 .store-locator {
     text-align: center;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
-}
-
-/* Párrafo descriptivo */
-.store-locator p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Contenedor principal: Mapa y tiendas */
-.store-row {
-    display: flex;
-    justify-content: space-between; /* Espacio uniforme entre tarjetas */
-    margin-bottom: 20px; /* Espacio entre filas */
-}
-
-.store-card {
-    background-size: cover; /* Asegura que el fondo cubra todo el contenedor */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 150px; /* Fija la altura */
-    width: 30%; /* Cada tarjeta ocupa un 30% del ancho */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-/* Botón */
-.btn-primary {
-    padding: 8px 15px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
+    padding: 30px 10%;
     background-color: coral;
 }
 
+.store-locator h1 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.store-locator p {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    margin: 0 auto;
+    max-width: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container img {
+    width: 100%;
+    height: auto;
+}
+
+.store-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.store-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.store-card:hover {
+    transform: scale(1.05);
+}
+
+.store-card h5 {
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.store-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.store-card .btn {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.store-card .btn:hover {
+    background-color: coral;
+}
