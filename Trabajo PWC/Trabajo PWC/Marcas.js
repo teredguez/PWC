@@ -1,3 +1,11 @@
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Función para recuperar el carrito desde localStorage
+function getCartFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const productImages = document.querySelectorAll(".product-image");
 
@@ -14,5 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
             image.src = originalSrc; // Vuelve a la imagen original
         });
     });
+
+    updateCartCount();
 });
+
+// Función para actualizar el conteo del carrito
+function updateCartCount() {
+    // Recuperar el carrito desde localStorage
+    const cart = getCartFromLocalStorage();
+    // Actualizar el contador en el HTML
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").innerText = totalItems;
+}
 

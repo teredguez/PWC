@@ -1,6 +1,11 @@
 // Recuperar carrito desde localStorage o inicializar vacío
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Inicializar el contador al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+    updateCartCount();
+});
+
 // Escucha el evento del botón "Añadir al carrito"
 document.getElementById("add-to-cart-btn").addEventListener("click", function () {
     console.log("Botón 'Añadir al carrito' clicado."); // Depuración
@@ -70,9 +75,6 @@ function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     document.getElementById("cart-count").innerText = totalItems;
 }
-
-// Inicializar el contador al cargar la página
-updateCartCount();
 
 // Mostrar los productos del carrito en la consola (opcional para depuración)
 document.getElementById("cart-link").addEventListener("click", function () {

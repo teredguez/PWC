@@ -38,7 +38,8 @@ function updateCartCount() {
     const cart = getCartFromLocalStorage();
     
     // Actualizar el contador en el HTML
-    document.getElementById("cart-count").innerText = cart.length;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").innerText = totalItems;
 }
 
 // Mostrar los productos del carrito en la consola
