@@ -64,6 +64,13 @@ main {
     margin-bottom: 20px;
 }
 
+.cart-item {
+    border-bottom: 1px solid #ccc;  /* Línea de separación entre los productos */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;  /* Tamaño de texto más pequeño */
+}
+
 #cart-total {
     font-size: 1.5em;
     font-weight: bold;
@@ -95,6 +102,16 @@ button#buy-button {
 
 #clear-cart, #buy-button {
     display: inline-block;
+    margin-top: 20px;
 }
 
+#clear-cart {
+    margin-right: 10px;
+}
 
+#cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}

@@ -1,25 +1,51 @@
-// Carrito inicial vacío
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Función para recuperar el carrito desde localStorage
+function getCartFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+// Función para guardar el carrito en localStorage
+function saveCartToLocalStorage(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 // Función para añadir productos al carrito
-function addToCart(productName, productPrice) {
+function addToCart(productName, productPrice, quantity, size) {
+    console.log(`Añadiendo ${quantity} unidades de "${productName}" (Talla: ${size}) al carrito.`);
+
     // Añadir el producto al carrito
-    cart.push({ name: productName, price: productPrice });
-    
+    cart.push({
+        name: productName,
+        price: productPrice,
+        quantity: quantity,
+        size: size
+    });
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
     // Actualizar el conteo del carrito
     updateCartCount();
-    
-    // Notificación
-    alert(productName + " ha sido añadido al carrito.");
+
+    // Notificar al usuario
+    alert(`${quantity} unidades de "${productName}" (Talla: ${size}) han sido añadidas al carrito.`);
 }
 
 // Función para actualizar el conteo del carrito en el menú
 function updateCartCount() {
+    // Recuperar el carrito desde localStorage
+    const cart = getCartFromLocalStorage();
+    
+    // Actualizar el contador en el HTML
     document.getElementById("cart-count").innerText = cart.length;
 }
 
 // Mostrar los productos del carrito en la consola
 document.getElementById("cart-link").addEventListener("click", function() {
+    // Recuperar el carrito desde localStorage
+    const cart = getCartFromLocalStorage();
+    
     console.log("Carrito de Compras:");
     cart.forEach(item => console.log(item.name + " - $" + item.price));
 });
@@ -50,6 +76,9 @@ function moveCarousel(direction) {
 //funcion para deslizar la pantalla hacia los productos destacados
 //al pulsar el boton de Shop Now
 document.addEventListener("DOMContentLoaded", () => {
+    //Actualizar contador carrito
+    updateCartCount();
+    
     // Seleccionamos el botón y la sección de destino
     const shopNowButton = document.getElementById("shop now button");
     const popularSection = document.getElementById("popular");
