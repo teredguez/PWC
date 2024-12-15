@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="Carrito.css">
+</head>
+<body>
+    <!--BARRA DE NAVEGACIÓN-->
+    <header class="header">
+        <div class="logo">
+            <a href="../Menu.html">
+                <img src="Images/LOGO-NO-FONDO.png" alt="Logo de la marca" height="40">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">HOMBRE</a></li>
+                <li><a href="#">MUJER</a></li>
+                <li><a href="#">ZAPATOS</a></li>
+                <li><a href="#" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1 class="text-center">Carrito de Compras</h1>
+        <div id="cart-items" class="my-4"></div>
+        <div id="cart-total" class="text-center my-3"></div>
+        <div class="text-center">
+            <button id="clear-cart" class="btn btn-primary">Vaciar Carrito</button>
+            <button id="buy-button" class="btn btn-primary">Comprar</button>
+        </div>
+    </main>
+
+    <script src="Carrito.js"></script>
+</body>
+</html>
+
+

@@ -1,5 +1,5 @@
-// Carrito inicial vacío
-let cart = [];
+// Recuperar carrito desde localStorage o inicializar vacío
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Escucha el evento del botón "Añadir al carrito"
 document.getElementById("add-to-cart-btn").addEventListener("click", function () {
@@ -30,19 +30,32 @@ document.getElementById("add-to-cart-btn").addEventListener("click", function ()
 
     // Añadir al carrito
     addToCart(productName, productPrice, quantity, selectedSize);
+
+    // Guardar carrito en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
 });
 
 // Función para añadir productos al carrito
 function addToCart(productName, productPrice, quantity, size) {
     console.log(`Añadiendo ${quantity} unidades de "${productName}" (Talla: ${size}) al carrito.`); // Depuración
 
-    // Añadir el producto al carrito
-    cart.push({
-        name: productName,
-        price: productPrice,
-        quantity: quantity,
-        size: size
-    });
+    // Verificar si el producto ya existe en el carrito
+    const existingProductIndex = cart.findIndex(
+        item => item.name === productName && item.size === size
+    );
+
+    if (existingProductIndex > -1) {
+        // Si ya existe, actualizar la cantidad
+        cart[existingProductIndex].quantity += quantity;
+    } else {
+        // Si no existe, añadir un nuevo producto
+        cart.push({
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+            size: size
+        });
+    }
 
     // Actualizar el conteo del carrito
     updateCartCount();
@@ -56,6 +69,9 @@ function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     document.getElementById("cart-count").innerText = totalItems;
 }
+
+// Inicializar el contador al cargar la página
+updateCartCount();
 
 // Mostrar los productos del carrito en la consola (opcional para depuración)
 document.getElementById("cart-link").addEventListener("click", function () {

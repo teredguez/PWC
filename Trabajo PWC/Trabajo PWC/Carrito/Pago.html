@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="stylesheet" href="Pago.css">
+</head>
+<body>
+    <header>
+        <h1>Datos de Pago</h1>
+        <a href="Carrito.html">Volver al Carrito</a>
+    </header>
+    <main>
+        <form id="payment-form">
+            <div>
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="address">Dirección</label>
+                <input type="text" id="address" required>
+            </div>
+            <div>
+                <label for="card">Número de Tarjeta</label>
+                <input type="text" id="card" maxlength="16" required>
+            </div>
+            <div>
+                <label for="expiration">Fecha de Expiración</label>
+                <input type="month" id="expiration" required>
+            </div>
+            <div>
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" maxlength="3" required>
+            </div>
+            <button type="submit">Finalizar Compra</button>
+        </form>
+        <div id="success-message" style="display: none;">
+            <h2>¡Gracias por tu compra!</h2>
+            <p>Recibirás un correo de confirmación en breve.</p>
+            <a href="../Menu.html">Volver al Menú</a>
+        </div>
+    </main>
+    <script src="Pago.js"></script>
+</body>
+</html>

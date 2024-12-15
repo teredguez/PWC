@@ -1,0 +1,113 @@
+/* Estilo general */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Encabezado */
+header {
+    background-color: coral;
+    color: black;
+    padding: 15px;
+    text-align: center;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: black;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+form input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: coral;
+    outline: none;
+}
+
+/* Botón de envío */
+button {
+    background-color: coral;
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 127, 80, 0.8);
+    transform: scale(1.05);
+}
+
+/* Mensaje de éxito */
+#success-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#success-message h2 {
+    font-size: 1.5em;
+    color: coral;
+}
+
+#success-message a {
+    color: coral;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#success-message a:hover {
+    text-decoration: underline;
+}
+
