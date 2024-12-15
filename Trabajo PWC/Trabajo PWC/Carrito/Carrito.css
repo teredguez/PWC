@@ -1,12 +1,13 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: coral;
+    font-size: 20px;
 }
 
 .header{
-    background-color: coral;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,8 +72,8 @@ main {
 }
 
 button {
-    background-color: coral;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     padding: 13px 30px;
     cursor: pointer;
