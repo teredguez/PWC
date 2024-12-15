@@ -1,0 +1,394 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+body{
+    background-color: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:85px;
+    padding: 5px 10%;
+    margin-bottom: 0; /* Asegura que no haya margen extra debajo del header */
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: black;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header .nav-links li a:hover{
+    color:coral;
+}
+
+/* Carrito de Compras */
+.cart {
+    position: relative;
+    margin-left: 20px;
+}
+
+.cart-icon img {
+    height: 35px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cart-icon img:hover {
+    transform: scale(1.2);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: coral;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+#home span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: coral;
+    font-size: 3rem; /* Igual tamaño que el <h1> */
+}
+
+#home h1{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem; /* Igual tamaño que el <h1> */
+}
+
+#home h5{
+    font-size: 2rem;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#home p{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#home {
+    margin-top: 0; /* Elimina margen superior */
+    padding-top: 20px; /* Si es necesario, añade un poco de espacio interno */
+}
+
+button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 13px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background-color: coral;
+}
+
+#home{
+    background-image: url("Images/PRIMERA OTRA.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Estilo general */
+#brand {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo general */
+#brand {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: coral; 
+    padding: 50px 0; /* Espaciado para evitar que las flechas estén encima */
+}
+
+/* Contenedor del carrusel */
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Contenedor del track (cinta deslizante) */
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track que contiene las imágenes */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+/* Imágenes */
+.carousel-track img {
+    width: 150px;
+    height: auto; /* Ajusta automáticamente la altura */
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+/* Botones del carrusel */
+.carousel-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-button.left {
+    left: -20px; /* Desplazamos fuera del contenedor */
+}
+
+.carousel-button.right {
+    right: -20px; /* Desplazamos fuera del contenedor */
+}
+
+#new .one {
+    position: relative; /* Necesario para posicionar .details respecto al contenedor */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+#new .one img{
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: block;
+}
+
+#new .one .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Asegura que el texto sea visible */
+    background: rgba(0, 0, 0, 0.4); /* Fondo semitransparente para contraste */
+    z-index: 2; /* Hace que esté encima de la imagen */
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.3s ease; /* Animación al hacer hover */
+}
+
+#new .one:hover .details{
+    cursor: pointer;
+    background-color: rgba(255, 127, 80, 0.482);
+    opacity: 1;
+}
+
+#new .one h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#new .one button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+#new .one button:hover {
+    background-color: coral; /* Cambia de color al pasar el mouse */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Asegura una altura uniforme */
+}
+  
+  .product-details {
+    flex-grow: 1; /* Permite que el contenido principal se expanda */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinea los elementos uniformemente */
+}
+  
+  .product-name {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+  
+  .product-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+  
+  .btn {
+    align-self: center; 
+}
+ 
+hr{
+    width: 30px;
+    height: 2px;
+    color: black;
+}
+
+footer{
+    background-color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+footer a {
+    color: inherit; /* Mantén el color de los enlaces consistente */
+    text-decoration: none; /* Elimina subrayados, si los hay */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Opcional: subrayar enlaces al pasar el ratón */
+}
+
+.footer-one img {
+    max-width: 100%; /* Limita el ancho al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    margin-bottom: 20px; /* Añade espacio entre el logo y el texto */
+}
+
+.footer-one {
+    overflow: hidden; /* Controla el desbordamiento */
+    padding-right: 15px; /* Asegura espaciado dentro de la columna */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-one h5{
+    font-size: xx-large;
+}
+
+.footer-one .row img {
+    width: 100px; /* Ajusta al tamaño deseado */
+    height: 100px; /* Igual al ancho para crear un cuadrado */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
+.copyright .col-lg-3 img {
+    max-width: 100%; /* La imagen no excederá el ancho de su columna */
+    height: auto; /* Mantiene las proporciones */
+    display: block; /* Asegura que no se desborde */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+#blog-container {
+    margin-top: 0; /* Elimina cualquier margen por encima de esta sección */
+    padding-top: 10px; /* Ajusta el espacio interno según sea necesario */
+}
+
+#blog-container .post .post-img{
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#blog-container .post img{
+    transition: 0.3s ease;
+}
+
+#blog-container .post .post-img img {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 375px; /* Ajusta al alto deseado */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+    display: block; /* Evita los espacios extra por imágenes inline */
+}
+
+#blog-container .post:hover img{
+    transform: scale(1.3) rotate(-10deg);
+    opacity: 0.8;
+}
+
+#blog-container .post h3{
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#blog-container .post:hover h3{
+    color: black;
+}
