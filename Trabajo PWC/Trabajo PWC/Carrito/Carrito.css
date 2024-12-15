@@ -71,6 +71,18 @@ main {
     font-size: 0.9rem;  /* Tamaño de texto más pequeño */
 }
 
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: coral;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
 #cart-total {
     font-size: 1.5em;
     font-weight: bold;

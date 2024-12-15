@@ -3,6 +3,8 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Función para mostrar los productos en el carrito
 function displayCart() {
+
+    console.log("Contenido del carrito:", cart); // Loguea el carrito completo
     const cartContainer = document.getElementById("cart-items");
     cartContainer.innerHTML = ''; // Limpiar el carrito actual
 
