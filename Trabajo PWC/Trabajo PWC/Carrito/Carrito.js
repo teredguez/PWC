@@ -1,56 +1,92 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotalContainer = document.getElementById('cart-total');
-    const clearCartButton = document.getElementById('clear-cart');
-    const buyButton = document.getElementById('buy-button');
+// Recuperar carrito desde localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Cargar el carrito desde localStorage
-    let cart = JSON.parse(localStorage.getItem('carrito')) || [];
+// Función para mostrar los productos en el carrito
+function displayCart() {
 
-    // Renderizar el carrito
-    const renderCart = () => {
-        cartItemsContainer.innerHTML = '';
-        let total = 0;
+    console.log("Contenido del carrito:", cart); // Loguea el carrito completo
+    const cartContainer = document.getElementById("cart-items");
+    cartContainer.innerHTML = ''; // Limpiar el carrito actual
 
-        cart.forEach((item, index) => {
-            const itemElement = document.createElement('div');
-            itemElement.innerHTML = `
-                <p>${item.name} - $${item.price}</p>
-                <button onclick="removeItem(${index})">Eliminar</button>
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+    } else {
+        cart.forEach(item => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("cart-item");
+
+            productElement.innerHTML = `
+                <div class="cart-item-details">
+                    <p><strong>${item.name}</strong> (Talla: ${item.size})</p>
+                    <p>Cantidad: ${item.quantity}</p>
+                    <p>Precio: €${item.price.toFixed(2)}</p>
+                    <p>Total: €${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <button class="remove-item" data-name="${item.name}" data-size="${item.size}">Eliminar</button>
             `;
-            cartItemsContainer.appendChild(itemElement);
-            total += item.price;
+
+            cartContainer.appendChild(productElement);
         });
+    }
 
-        cartTotalContainer.textContent = 'Total: $' + total.toFixed(2);
-    };
+    updateCartCount(); // Actualizar el contador de productos
+    updateCartTotal(); // Actualizar el precio total
+}
 
-    // Eliminar un artículo
-    window.removeItem = (index) => {
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        renderCart();
-    };
+// Función para calcular el precio total de la compra
+function updateCartTotal() {
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalContainer = document.getElementById("cart-total");
+    totalContainer.innerHTML = `Total: €${totalPrice.toFixed(2)}`;
+}
 
-    // Vaciar carrito
-    clearCartButton.addEventListener('click', () => {
-        cart = [];
-        localStorage.setItem('cart', JSON.stringify(cart));
-        renderCart();
-    });
+// Función para eliminar productos del carrito
+function removeFromCart(productName, productSize) {
+    // Filtrar el producto a eliminar
+    cart = cart.filter(item => !(item.name === productName && item.size === productSize));
 
-    // Comprar (vacía el carrito y redirige)
-    buyButton.addEventListener('click', () => {
-        if (cart.length > 0) {
-            alert('Gracias por tu compra.');
-            cart = [];
-            localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = '../Menu.html';
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Actualizar la vista del carrito
+    displayCart();
+}
+
+// Función para actualizar el contador de productos en el carrito
+function updateCartCount() {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").innerText = totalItems;
+}
+
+// Escuchar el evento de clic en los botones de "Eliminar" en los productos del carrito
+document.addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("remove-item")) {
+        const productName = e.target.getAttribute("data-name");
+        const productSize = e.target.getAttribute("data-size");
+
+        removeFromCart(productName, productSize);
+    }
+});
+
+// Inicializar la página del carrito
+document.addEventListener("DOMContentLoaded", () => {
+    displayCart();
+
+    // Evento para el botón de "Comprar"
+    document.getElementById("buy-button").addEventListener("click", function () {
+        if (cart.length === 0) {
+            alert("Tu carrito está vacío. No puedes proceder a pagar.");
         } else {
-            alert('El carrito está vacío.');
+            // Redirigir a la página de pago
+            window.location.href = "Pago.html";
         }
     });
 
-    renderCart();
+    // Evento para el botón de "Vaciar carrito"
+    document.getElementById("clear-cart").addEventListener("click", function () {
+        // Limpiar el carrito
+        cart = []; // Vaciar el array del carrito
+        localStorage.removeItem("cart"); // Eliminar el carrito de localStorage
+        displayCart(); // Actualizar la vista del carrito
+    });
 });
-

@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             paymentForm.style.display = 'none';
             successMessage.style.display = 'block';
-            localStorage.removeItem('carrito'); // Vaciar el carrito tras finalizar compra
+            localStorage.removeItem('cart'); // Vaciar el carrito tras finalizar compra
+            
         }, 1000);
     });
 });

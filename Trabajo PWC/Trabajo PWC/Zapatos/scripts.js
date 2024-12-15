@@ -14,8 +14,8 @@ document.getElementById("add-to-cart-btn").addEventListener("click", function ()
     const quantity = parseInt(quantityInput.value, 10);
 
     // Definir el producto actual (nombre y precio)
-    const productName = "Chaqueta The North Face M 1996 Retro Nuptse";
-    const productPrice = 230.00;
+    const productName = document.getElementById('product-name').textContent;
+    const productPrice = parseFloat(document.getElementById('product-price').textContent.replace('€', '').replace(',', '.'));
 
     // Validaciones
     if (!selectedSize) {
